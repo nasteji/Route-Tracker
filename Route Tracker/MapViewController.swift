@@ -8,6 +8,7 @@
 import UIKit
 import GoogleMaps
 import CoreLocation
+import RealmSwift
 
 class MapViewController: UIViewController {
     
@@ -19,12 +20,34 @@ class MapViewController: UIViewController {
     var marker: GMSMarker?
     var manualMarker: GMSMarker?
     
-    @IBAction func updateLocation(_ sender: Any) {
+    var route: GMSPolyline?
+    var routePath: GMSMutablePath?
+    
+    @IBAction func beginNewTrack(_ sender: Any) {
+        route?.map = nil
+        route = GMSPolyline()
+        routePath = GMSMutablePath()
+        route?.map = mapView
         locationManager?.startUpdatingLocation()
+        
     }
-    @IBAction func currentLocation(_ sender: Any) {
-        locationManager?.delegate = self
-        locationManager?.requestLocation()
+    @IBAction func endTrackButton(_ sender: Any) {
+        endTrack()
+    }
+    
+    @IBAction func showPreviousRoute(_ sender: UIButton) {
+        if (routePath?.count())! > 0 {
+            let alert = UIAlertController(title: "Внимание!", message: "Необходимо остановить слежение", preferredStyle: UIAlertController.Style.alert)
+            let alertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { action in
+                self.endTrack()
+                self.loadPreviousRoute()
+            }
+            alert.addAction(alertAction)
+            present(alert, animated: true)
+        } else {
+            loadPreviousRoute()
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -48,7 +71,49 @@ class MapViewController: UIViewController {
     
     func configureLocationManager() {
         locationManager = CLLocationManager()
-        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.allowsBackgroundLocationUpdates = true
+        locationManager?.pausesLocationUpdatesAutomatically = false
+        locationManager?.startMonitoringSignificantLocationChanges()
+        locationManager?.requestAlwaysAuthorization()
+    }
+    
+    func saveTrackCoordinate(coordinate: Coordinate) {
+        do {
+            let realm = try Realm()
+            print(realm.configuration.fileURL as Any)
+           
+            let oldTrackCoordinate = realm.objects(Coordinate.self)
+            realm.beginWrite()
+            realm.delete(oldTrackCoordinate)
+
+            realm.add(coordinate)
+            try realm.commitWrite()
+        } catch {
+            print(error)
+        }
+    }
+    
+    func endTrack() {
+        locationManager?.stopUpdatingLocation()
+        let encodedPath = routePath?.encodedPath() ?? ""
+        let trackCoordinate: Coordinate = Coordinate()
+        trackCoordinate.coordinate = encodedPath
+        saveTrackCoordinate(coordinate: trackCoordinate)
+        routePath?.removeAllCoordinates()
+    }
+    
+    func loadPreviousRoute() {
+        do {
+            let realm = try Realm()
+            let trackCoordinate = realm.objects(Coordinate.self)
+            routePath = GMSMutablePath(fromEncodedPath: trackCoordinate.first?.coordinate ?? "")
+            route?.path = routePath
+            let position = GMSCameraUpdate.fit(GMSCoordinateBounds(path: routePath!))
+            mapView.animate(with: position)
+        } catch {
+            print(error)
+        }
     }
 }
 
@@ -68,11 +133,10 @@ extension MapViewController: CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.last else { return }
-        geocoder.reverseGeocodeLocation(location) { places, error in
-            let updateCoordinate = location.coordinate
-            self.configureMap(coordinate: updateCoordinate)
-            self.addMarker(coordinate: updateCoordinate)
-        }
+        routePath?.add(location.coordinate)
+        route?.path = routePath
+        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+        mapView.animate(to: position)
     }
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error)
