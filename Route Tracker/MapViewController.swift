@@ -22,6 +22,7 @@ class MapViewController: UIViewController {
     
     var route: GMSPolyline?
     var routePath: GMSMutablePath?
+    var usselesExampleVariable = ""
     
     @IBAction func beginNewTrack(_ sender: Any) {
         route?.map = nil

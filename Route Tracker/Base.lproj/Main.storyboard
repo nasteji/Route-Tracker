@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pva-g5-u8v">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S21-O2-JG7">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
@@ -74,23 +74,86 @@
             </objects>
             <point key="canvasLocation" x="939.13043478260875" y="67.633928571428569"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="Fe9-MJ-8Hs">
+        <!--Main View Controller-->
+        <scene sceneID="9K4-Sx-arw">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pva-g5-u8v" sceneMemberID="viewController">
+                <viewController id="CJz-fH-VOq" customClass="MainViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7I-lh-HGe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-aR-Abm">
+                                <rect key="frame" x="143" y="395" width="128" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-nb-bvK">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Показать карту"/>
+                                        <connections>
+                                            <action selector="showMap:" destination="CJz-fH-VOq" eventType="touchUpInside" id="kiC-GT-d0Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-Om-JZZ">
+                                        <rect key="frame" x="30.5" y="75" width="67" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Выйти"/>
+                                        <connections>
+                                            <action selector="logout:" destination="CJz-fH-VOq" eventType="touchUpInside" id="0Sr-Bk-htD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Na1-gm-IeB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OJZ-aR-Abm" firstAttribute="centerX" secondItem="a7I-lh-HGe" secondAttribute="centerX" id="6Id-sW-BWx"/>
+                            <constraint firstItem="OJZ-aR-Abm" firstAttribute="centerY" secondItem="a7I-lh-HGe" secondAttribute="centerY" id="VNP-tT-Mx3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vps-vM-IuI"/>
+                    <connections>
+                        <outlet property="router" destination="dxp-45-ER0" id="RO2-fa-AZ4"/>
+                        <segue destination="Otq-E3-Wq7" kind="show" identifier="toLaunch" id="dxa-Yz-KeN"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="cXZ-Kd-mhM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RK-80-JO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="dxp-45-ER0" customClass="MainRouter" customModule="Route_Tracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="CJz-fH-VOq" id="RtQ-wh-oE4"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="-622.09821428571422"/>
+        </scene>
+        <!--Launch-->
+        <scene sceneID="R62-CG-fed">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Launch" id="Otq-E3-Wq7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="key-hd-5D1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDe-xl-i92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520.289855072464" y="-622.09821428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wox-ZC-J0B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S21-O2-JG7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VOv-41-tb0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VhS-Ki-Bi9">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="WHM-kn-kZe"/>
+                        <segue destination="CJz-fH-VOq" kind="relationship" relationship="rootViewController" id="Gpu-U7-uVH"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xqg-c7-aN8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHQ-i2-6Zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28.985507246376812" y="67.633928571428569"/>
+            <point key="canvasLocation" x="37.681159420289859" y="-622.09821428571422"/>
         </scene>
     </scenes>
     <resources>

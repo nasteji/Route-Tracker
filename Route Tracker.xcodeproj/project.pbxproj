@@ -17,6 +17,19 @@
 		9C39CBE7274E71D300815438 /* Route_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBE6274E71D300815438 /* Route_TrackerTests.swift */; };
 		9C39CBF1274E71D300815438 /* Route_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBF0274E71D300815438 /* Route_TrackerUITests.swift */; };
 		9C39CBF3274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBF2274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift */; };
+		9C542C11276208490033B8B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C10276208490033B8B6 /* User.swift */; };
+		9C542C13276212FE0033B8B6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C542C12276212FE0033B8B6 /* Auth.storyboard */; };
+		9C542C15276213390033B8B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C14276213390033B8B6 /* LoginViewController.swift */; };
+		9C542C17276216850033B8B6 /* RecoveryPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C16276216850033B8B6 /* RecoveryPasswordViewController.swift */; };
+		9C542C19276217B70033B8B6 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C18276217B70033B8B6 /* MainViewController.swift */; };
+		9C542C1B27621E920033B8B6 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C1A27621E920033B8B6 /* BaseRouter.swift */; };
+		9C542C1D2762215F0033B8B6 /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C1C2762215F0033B8B6 /* Launch.swift */; };
+		9C542C1F276221B80033B8B6 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C1E276221B80033B8B6 /* LaunchRouter.swift */; };
+		9C542C212762225F0033B8B6 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C202762225F0033B8B6 /* LoginRouter.swift */; };
+		9C542C23276222E90033B8B6 /* Launch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C542C22276222E90033B8B6 /* Launch.storyboard */; };
+		9C542C27276224F70033B8B6 /* RootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C26276224F70033B8B6 /* RootSegue.swift */; };
+		9C542C29276243960033B8B6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C28276243960033B8B6 /* RegistrationViewController.swift */; };
+		9C542C2B276244EF0033B8B6 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */; };
 		9CA67955274EA87B00F3D6C3 /* Pods_Route_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C720FA73398D9C93EF1A98D /* Pods_Route_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +68,19 @@
 		9C39CBEC274E71D300815438 /* Route TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Route TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C39CBF0274E71D300815438 /* Route_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route_TrackerUITests.swift; sourceTree = "<group>"; };
 		9C39CBF2274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C542C10276208490033B8B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		9C542C12276212FE0033B8B6 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
+		9C542C14276213390033B8B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		9C542C16276216850033B8B6 /* RecoveryPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordViewController.swift; sourceTree = "<group>"; };
+		9C542C18276217B70033B8B6 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		9C542C1A27621E920033B8B6 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		9C542C1C2762215F0033B8B6 /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		9C542C1E276221B80033B8B6 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		9C542C202762225F0033B8B6 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		9C542C22276222E90033B8B6 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
+		9C542C26276224F70033B8B6 /* RootSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSegue.swift; sourceTree = "<group>"; };
+		9C542C28276243960033B8B6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +147,20 @@
 				9C39CBD1274E71D200815438 /* SceneDelegate.swift */,
 				9C39CBD3274E71D200815438 /* MapViewController.swift */,
 				9C0021BA275E5112005ED960 /* Coordinate.swift */,
+				9C542C10276208490033B8B6 /* User.swift */,
 				9C39CBD5274E71D200815438 /* Main.storyboard */,
+				9C542C12276212FE0033B8B6 /* Auth.storyboard */,
+				9C542C22276222E90033B8B6 /* Launch.storyboard */,
+				9C542C14276213390033B8B6 /* LoginViewController.swift */,
+				9C542C202762225F0033B8B6 /* LoginRouter.swift */,
+				9C542C16276216850033B8B6 /* RecoveryPasswordViewController.swift */,
+				9C542C28276243960033B8B6 /* RegistrationViewController.swift */,
+				9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */,
+				9C542C18276217B70033B8B6 /* MainViewController.swift */,
+				9C542C1A27621E920033B8B6 /* BaseRouter.swift */,
+				9C542C1C2762215F0033B8B6 /* Launch.swift */,
+				9C542C1E276221B80033B8B6 /* LaunchRouter.swift */,
+				9C542C26276224F70033B8B6 /* RootSegue.swift */,
 				9C39CBD8274E71D300815438 /* Assets.xcassets */,
 				9C39CBDA274E71D300815438 /* LaunchScreen.storyboard */,
 				9C39CBDD274E71D300815438 /* Info.plist */,
@@ -261,6 +300,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C542C13276212FE0033B8B6 /* Auth.storyboard in Resources */,
+				9C542C23276222E90033B8B6 /* Launch.storyboard in Resources */,
 				9C39CBDC274E71D300815438 /* LaunchScreen.storyboard in Resources */,
 				9C39CBD9274E71D300815438 /* Assets.xcassets in Resources */,
 				9C39CBD7274E71D200815438 /* Main.storyboard in Resources */,
@@ -347,10 +388,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C542C15276213390033B8B6 /* LoginViewController.swift in Sources */,
+				9C542C1B27621E920033B8B6 /* BaseRouter.swift in Sources */,
+				9C542C212762225F0033B8B6 /* LoginRouter.swift in Sources */,
+				9C542C17276216850033B8B6 /* RecoveryPasswordViewController.swift in Sources */,
+				9C542C29276243960033B8B6 /* RegistrationViewController.swift in Sources */,
 				9C39CBD4274E71D200815438 /* MapViewController.swift in Sources */,
 				9C39CBD0274E71D200815438 /* AppDelegate.swift in Sources */,
+				9C542C1F276221B80033B8B6 /* LaunchRouter.swift in Sources */,
 				9C39CBD2274E71D200815438 /* SceneDelegate.swift in Sources */,
+				9C542C11276208490033B8B6 /* User.swift in Sources */,
 				9C0021BB275E5112005ED960 /* Coordinate.swift in Sources */,
+				9C542C1D2762215F0033B8B6 /* Launch.swift in Sources */,
+				9C542C19276217B70033B8B6 /* MainViewController.swift in Sources */,
+				9C542C27276224F70033B8B6 /* RootSegue.swift in Sources */,
+				9C542C2B276244EF0033B8B6 /* RegistrationRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
