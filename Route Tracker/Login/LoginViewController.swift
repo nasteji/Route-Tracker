@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: HideViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
@@ -42,6 +42,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         loginView.delegate = self
         passwordView.delegate = self
+        
+        loginView.autocorrectionType = .no
+        passwordView.autocorrectionType = .no
+        passwordView.isSecureTextEntry = true
+        
     }
     
     func alert(title: String, message: String) {

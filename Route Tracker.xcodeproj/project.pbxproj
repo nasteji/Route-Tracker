@@ -16,6 +16,7 @@
 		9C39CBE7274E71D300815438 /* Route_TrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBE6274E71D300815438 /* Route_TrackerTests.swift */; };
 		9C39CBF1274E71D300815438 /* Route_TrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBF0274E71D300815438 /* Route_TrackerUITests.swift */; };
 		9C39CBF3274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C39CBF2274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift */; };
+		9C40A51127676ACA0081C673 /* HideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C40A51027676ACA0081C673 /* HideViewController.swift */; };
 		9C542C11276208490033B8B6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C10276208490033B8B6 /* User.swift */; };
 		9C542C13276212FE0033B8B6 /* Auth.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9C542C12276212FE0033B8B6 /* Auth.storyboard */; };
 		9C542C15276213390033B8B6 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C14276213390033B8B6 /* LoginViewController.swift */; };
@@ -66,6 +67,7 @@
 		9C39CBEC274E71D300815438 /* Route TrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Route TrackerUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C39CBF0274E71D300815438 /* Route_TrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route_TrackerUITests.swift; sourceTree = "<group>"; };
 		9C39CBF2274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Route_TrackerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		9C40A51027676ACA0081C673 /* HideViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideViewController.swift; sourceTree = "<group>"; };
 		9C542C10276208490033B8B6 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		9C542C12276212FE0033B8B6 /* Auth.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Auth.storyboard; sourceTree = "<group>"; };
 		9C542C14276213390033B8B6 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				9CC66461276257E900736AF4 /* Login */,
 				9C39CBD8274E71D300815438 /* Assets.xcassets */,
 				9C39CBDD274E71D300815438 /* Info.plist */,
+				9C40A51227676B9E0081C673 /* Helpers */,
 			);
 			path = "Route Tracker";
 			sourceTree = "<group>";
@@ -168,6 +171,14 @@
 				9C39CBF2274E71D300815438 /* Route_TrackerUITestsLaunchTests.swift */,
 			);
 			path = "Route TrackerUITests";
+			sourceTree = "<group>";
+		};
+		9C40A51227676B9E0081C673 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9C40A51027676ACA0081C673 /* HideViewController.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		9CC6645E2762570500736AF4 /* Router */ = {
@@ -428,6 +439,7 @@
 				9C542C11276208490033B8B6 /* User.swift in Sources */,
 				9C0021BB275E5112005ED960 /* Coordinate.swift in Sources */,
 				9C542C1D2762215F0033B8B6 /* Launch.swift in Sources */,
+				9C40A51127676ACA0081C673 /* HideViewController.swift in Sources */,
 				9C542C19276217B70033B8B6 /* MainViewController.swift in Sources */,
 				9C542C27276224F70033B8B6 /* RootSegue.swift in Sources */,
 				9C542C2B276244EF0033B8B6 /* RegistrationRouter.swift in Sources */,

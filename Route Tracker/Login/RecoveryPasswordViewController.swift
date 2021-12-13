@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-final class RecoveryPasswordViewController: UIViewController {
+final class RecoveryPasswordViewController: HideViewController {
     
     @IBOutlet weak var loginView: UITextField!
     
@@ -33,6 +33,7 @@ final class RecoveryPasswordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        loginView.autocorrectionType = .no
     }
     
     private func showPassword() {
