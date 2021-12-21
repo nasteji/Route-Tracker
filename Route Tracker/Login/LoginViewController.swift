@@ -7,12 +7,15 @@
 
 import UIKit
 import RealmSwift
+import RxSwift
+import RxCocoa
 
 class LoginViewController: HideViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginView: UITextField!
     @IBOutlet weak var passwordView: UITextField!
     @IBOutlet weak var router: LoginRouter!
+    @IBOutlet weak var loginButton: UIButton!
     
     @IBAction func login(_ sender: Any) {
         guard loginView.text != "",
@@ -49,6 +52,15 @@ class LoginViewController: HideViewController, UITextFieldDelegate {
         
     }
     
+    func configureLoginBindings() {
+        Observable
+            .combineLatest(loginView.rx.text, passwordView.rx.text).map { login, password in
+                return !(login ?? "").isEmpty && (password ?? "").count >= 6
+            }
+            .bind { [weak loginButton] inputFilled in
+                loginButton?.isEnabled = inputFilled
+            }
+    }
     func alert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "OK", style: .cancel)

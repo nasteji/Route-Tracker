@@ -30,6 +30,12 @@
 		9C542C27276224F70033B8B6 /* RootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C26276224F70033B8B6 /* RootSegue.swift */; };
 		9C542C29276243960033B8B6 /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C28276243960033B8B6 /* RegistrationViewController.swift */; };
 		9C542C2B276244EF0033B8B6 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */; };
+		9C9BCCBF2768A7CC00AFB3FC /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9BCCBE2768A7CC00AFB3FC /* RxBlocking */; };
+		9C9BCCC12768A7CC00AFB3FC /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9BCCC02768A7CC00AFB3FC /* RxCocoa */; };
+		9C9BCCC32768A7CC00AFB3FC /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9BCCC22768A7CC00AFB3FC /* RxRelay */; };
+		9C9BCCC52768A7CC00AFB3FC /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9BCCC42768A7CC00AFB3FC /* RxSwift */; };
+		9C9BCCC72768A7CC00AFB3FC /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 9C9BCCC62768A7CC00AFB3FC /* RxTest */; };
+		9C9BCCC92768A9D800AFB3FC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9BCCC82768A9D800AFB3FC /* LocationManager.swift */; };
 		9CA67955274EA87B00F3D6C3 /* Pods_Route_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C720FA73398D9C93EF1A98D /* Pods_Route_Tracker.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +87,7 @@
 		9C542C26276224F70033B8B6 /* RootSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootSegue.swift; sourceTree = "<group>"; };
 		9C542C28276243960033B8B6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		9C9BCCC82768A9D800AFB3FC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +95,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C9BCCC12768A7CC00AFB3FC /* RxCocoa in Frameworks */,
 				9CA67955274EA87B00F3D6C3 /* Pods_Route_Tracker.framework in Frameworks */,
+				9C9BCCC52768A7CC00AFB3FC /* RxSwift in Frameworks */,
+				9C9BCCC32768A7CC00AFB3FC /* RxRelay in Frameworks */,
+				9C9BCCC72768A7CC00AFB3FC /* RxTest in Frameworks */,
+				9C9BCCBF2768A7CC00AFB3FC /* RxBlocking in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +213,7 @@
 				9C39CBD5274E71D200815438 /* Main.storyboard */,
 				9C542C18276217B70033B8B6 /* MainViewController.swift */,
 				9C39CBD3274E71D200815438 /* MapViewController.swift */,
+				9C9BCCC82768A9D800AFB3FC /* LocationManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -252,6 +265,13 @@
 			dependencies = (
 			);
 			name = "Route Tracker";
+			packageProductDependencies = (
+				9C9BCCBE2768A7CC00AFB3FC /* RxBlocking */,
+				9C9BCCC02768A7CC00AFB3FC /* RxCocoa */,
+				9C9BCCC22768A7CC00AFB3FC /* RxRelay */,
+				9C9BCCC42768A7CC00AFB3FC /* RxSwift */,
+				9C9BCCC62768A7CC00AFB3FC /* RxTest */,
+			);
 			productName = "Route Tracker";
 			productReference = 9C39CBCC274E71D200815438 /* Route Tracker.app */;
 			productType = "com.apple.product-type.application";
@@ -324,6 +344,9 @@
 				Base,
 			);
 			mainGroup = 9C39CBC3274E71D200815438;
+			packageReferences = (
+				9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 9C39CBCD274E71D200815438 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -428,6 +451,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C542C15276213390033B8B6 /* LoginViewController.swift in Sources */,
+				9C9BCCC92768A9D800AFB3FC /* LocationManager.swift in Sources */,
 				9C542C1B27621E920033B8B6 /* BaseRouter.swift in Sources */,
 				9C542C212762225F0033B8B6 /* LoginRouter.swift in Sources */,
 				9C542C17276216850033B8B6 /* RecoveryPasswordViewController.swift in Sources */,
@@ -806,6 +830,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9C9BCCBE2768A7CC00AFB3FC /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		9C9BCCC02768A7CC00AFB3FC /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		9C9BCCC22768A7CC00AFB3FC /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		9C9BCCC42768A7CC00AFB3FC /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		9C9BCCC62768A7CC00AFB3FC /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9C9BCCBD2768A7CC00AFB3FC /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9C39CBC4274E71D200815438 /* Project object */;
 }

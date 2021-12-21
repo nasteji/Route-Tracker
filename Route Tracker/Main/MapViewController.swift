@@ -14,7 +14,7 @@ class MapViewController: UIViewController {
     
     @IBOutlet weak var mapView: GMSMapView!
     
-    var locationManager: CLLocationManager?
+    let locationManager = LocationManager.instance
     let geocoder = CLGeocoder()
     let startCoordinate = CLLocationCoordinate2D(latitude: 59.939095, longitude: 30.315868)
     var marker: GMSMarker?
@@ -29,7 +29,7 @@ class MapViewController: UIViewController {
         route = GMSPolyline()
         routePath = GMSMutablePath()
         route?.map = mapView
-        locationManager?.startUpdatingLocation()
+        locationManager.startUpdatingLocation()
         
     }
     @IBAction func endTrackButton(_ sender: Any) {
@@ -58,6 +58,19 @@ class MapViewController: UIViewController {
         configureLocationManager()
     }
     
+    func configureLocationManager() {
+        locationManager
+            .location
+            .asObservable()
+            .bind { [weak self] location in
+                guard let location = location else { return }
+                self?.routePath?.add(location.coordinate)
+                self?.route?.path = self?.routePath
+                let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
+                self?.mapView.animate(to: position)
+            }
+    }
+    
     func configureMap(coordinate: CLLocationCoordinate2D) {
         let camera = GMSCameraPosition.camera(withTarget: coordinate, zoom: 17)
         mapView.camera = camera
@@ -68,15 +81,6 @@ class MapViewController: UIViewController {
         let marker = GMSMarker(position: coordinate)
         marker.map = mapView
         self.marker = marker
-    }
-    
-    func configureLocationManager() {
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
-        locationManager?.allowsBackgroundLocationUpdates = true
-        locationManager?.pausesLocationUpdatesAutomatically = false
-        locationManager?.startMonitoringSignificantLocationChanges()
-        locationManager?.requestAlwaysAuthorization()
     }
     
     func saveTrackCoordinate(coordinate: Coordinate) {
@@ -96,7 +100,7 @@ class MapViewController: UIViewController {
     }
     
     func endTrack() {
-        locationManager?.stopUpdatingLocation()
+        locationManager.stopUpdatingLocation()
         let encodedPath = routePath?.encodedPath() ?? ""
         let trackCoordinate: Coordinate = Coordinate()
         trackCoordinate.coordinate = encodedPath
@@ -127,19 +131,5 @@ extension MapViewController: GMSMapViewDelegate {
             marker.map = mapView
             self.manualMarker = marker
         }
-    }
-}
-
-extension MapViewController: CLLocationManagerDelegate {
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.last else { return }
-        routePath?.add(location.coordinate)
-        route?.path = routePath
-        let position = GMSCameraPosition.camera(withTarget: location.coordinate, zoom: 17)
-        mapView.animate(to: position)
-    }
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
 }
