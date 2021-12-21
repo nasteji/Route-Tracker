@@ -7,6 +7,7 @@
 
 import UIKit
 import GoogleMaps
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
         GMSServices.provideAPIKey("AIzaSyAkZGrDapttvwrkrwJKquulUZt12wU7pn8")
         
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.alert, .sound, .badge]) { granted, error in
+            guard granted
+            else {
+                print("Разрешение не получено")
+                return
+            }
+            self.sendNotificatioRequest(
+                content: self.makeNotificationContent(),
+                trigger: self.makeIntervalNotificationTrigger()
+            )
+        }
+        
         return true
+    }
+    
+    // MARK: - Notificaions
+    
+    func makeNotificationContent() -> UNNotificationContent {
+        let content = UNMutableNotificationContent()
+        content.title = "Пора вернуться в приложение"
+        content.body = "там интересно"
+        content.badge = 1
+        return content
+    }
+    
+    func makeIntervalNotificationTrigger() -> UNNotificationTrigger {
+        return UNTimeIntervalNotificationTrigger(timeInterval: (30 * 60), repeats: false )
+    }
+    
+    func sendNotificatioRequest(content: UNNotificationContent, trigger: UNNotificationTrigger) {
+        let request = UNNotificationRequest(identifier: "alarm",
+                                            content: content,
+                                            trigger: trigger
+        )
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { error in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+        }
     }
 
     // MARK: UISceneSession Lifecycle
