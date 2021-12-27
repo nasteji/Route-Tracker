@@ -76,6 +76,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="s7Z-Wn-JET"/>
                     <connections>
+                        <outlet property="loginButton" destination="uxg-D2-UZy" id="h2Y-2h-Evd"/>
                         <outlet property="loginView" destination="4rv-GQ-uZF" id="UEj-i7-13m"/>
                         <outlet property="passwordView" destination="dsD-gS-QGM" id="jje-yj-Ioe"/>
                         <outlet property="router" destination="YLC-Zs-XI8" id="HyF-s9-SVe"/>
@@ -222,7 +223,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="B1L-gK-nEW"/>
+        <segue reference="U02-Ex-bjK"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
