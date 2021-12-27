@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S21-O2-JG7">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rC7-YL-wc2" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="88" width="414" height="754"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ran-a5-CUI">
+                                <rect key="frame" x="0.0" y="842" width="414" height="54"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Отобразить предыдущий маршрут"/>
+                                <connections>
+                                    <action selector="showPreviousRoute:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Vol-Iz-kDA"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ran-a5-CUI" secondAttribute="trailing" id="6rp-gT-uhA"/>
+                            <constraint firstAttribute="bottom" secondItem="Ran-a5-CUI" secondAttribute="bottom" id="BCf-64-K7I"/>
+                            <constraint firstItem="rC7-YL-wc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FM3-IV-Kqf"/>
+                            <constraint firstItem="Ran-a5-CUI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="bsm-sV-pQf"/>
+                            <constraint firstItem="Ran-a5-CUI" firstAttribute="top" secondItem="rC7-YL-wc2" secondAttribute="bottom" id="fm5-BD-yRg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rC7-YL-wc2" secondAttribute="bottom" constant="20" id="pGy-19-kqG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rC7-YL-wc2" secondAttribute="trailing" id="ufu-xI-a3O"/>
+                            <constraint firstItem="rC7-YL-wc2" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wxq-TT-1o8"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="68m-Cr-wkr">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="YLf-kA-CeX">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="qgI-26-Akr">
+                                <rect key="frame" x="20" y="5" width="176" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Начать новый трек"/>
+                                <connections>
+                                    <action selector="beginNewTrack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YrZ-LC-ejx"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="lHD-RC-Xo9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="bpT-p9-bg9">
+                                <rect key="frame" x="228.5" y="5" width="165.5" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Закончить трек"/>
+                                <connections>
+                                    <action selector="endTrackButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ttw-iU-9KL"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="rC7-YL-wc2" id="SAx-Gi-0RC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.13043478260875" y="67.633928571428569"/>
+        </scene>
+        <!--Main View Controller-->
+        <scene sceneID="9K4-Sx-arw">
+            <objects>
+                <viewController id="CJz-fH-VOq" customClass="MainViewController" customModule="Route_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="a7I-lh-HGe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="44" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-aR-Abm">
+                                <rect key="frame" x="143" y="395" width="128" height="106"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzk-nb-bvK">
+                                        <rect key="frame" x="0.0" y="0.0" width="128" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Показать карту"/>
+                                        <connections>
+                                            <action selector="showMap:" destination="CJz-fH-VOq" eventType="touchUpInside" id="kiC-GT-d0Z"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FTb-Om-JZZ">
+                                        <rect key="frame" x="30.5" y="75" width="67" height="31"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Выйти"/>
+                                        <connections>
+                                            <action selector="logout:" destination="CJz-fH-VOq" eventType="touchUpInside" id="0Sr-Bk-htD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Na1-gm-IeB"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OJZ-aR-Abm" firstAttribute="centerX" secondItem="a7I-lh-HGe" secondAttribute="centerX" id="6Id-sW-BWx"/>
+                            <constraint firstItem="OJZ-aR-Abm" firstAttribute="centerY" secondItem="a7I-lh-HGe" secondAttribute="centerY" id="VNP-tT-Mx3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Vps-vM-IuI"/>
+                    <connections>
+                        <outlet property="router" destination="dxp-45-ER0" id="RO2-fa-AZ4"/>
+                        <segue destination="Otq-E3-Wq7" kind="show" identifier="toLaunch" id="dxa-Yz-KeN"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="toMap" id="cXZ-Kd-mhM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1RK-80-JO9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="dxp-45-ER0" customClass="MainRouter" customModule="Route_Tracker" customModuleProvider="target">
+                    <connections>
+                        <outlet property="controller" destination="CJz-fH-VOq" id="RtQ-wh-oE4"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="947.82608695652186" y="-622.09821428571422"/>
+        </scene>
+        <!--Launch-->
+        <scene sceneID="R62-CG-fed">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Launch" id="Otq-E3-Wq7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="key-hd-5D1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDe-xl-i92" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1520.289855072464" y="-622.09821428571422"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="wox-ZC-J0B">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="S21-O2-JG7" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="VhS-Ki-Bi9">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="CJz-fH-VOq" kind="relationship" relationship="rootViewController" id="Gpu-U7-uVH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BHQ-i2-6Zd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="37.681159420289859" y="-622.09821428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
