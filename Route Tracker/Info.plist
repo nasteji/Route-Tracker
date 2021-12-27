@@ -25,5 +25,9 @@
 	<array>
 		<string>location</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>для селфи</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>для хранения селфи</string>
 </dict>
 </plist>
