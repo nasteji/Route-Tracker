@@ -31,23 +31,11 @@ final class LocationManager: NSObject {
     }
     
     private func configureLocationManager() {
-        locationManager.delegate = self
         locationManager.allowsBackgroundLocationUpdates = true
         locationManager.pausesLocationUpdatesAutomatically = false
         locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
         locationManager.startMonitoringSignificantLocationChanges()
         locationManager.requestAlwaysAuthorization()
-    }
-    
-}
-
-extension LocationManager: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.location.accept(locations.last)
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print(error)
     }
     
 }

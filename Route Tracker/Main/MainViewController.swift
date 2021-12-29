@@ -22,15 +22,3 @@ final class MainViewController: UIViewController {
         router.prepare(for: segue, sender: sender)
     }
 }
-
-final class MainRouter: BaseRouter {
-    func toMap(usseles: String) {
-        perform(segue: "toMap") { (controller: MapViewController) in
-            controller.usselesExampleVariable = usseles
-        }
-    }
-    
-    func toLaunch() {
-        perform(segue: "toLaunch")
-    }
-}
