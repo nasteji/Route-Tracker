@@ -32,6 +32,7 @@
 		9C542C2B276244EF0033B8B6 /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */; };
 		9C9BCCC92768A9D800AFB3FC /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9BCCC82768A9D800AFB3FC /* LocationManager.swift */; };
 		9CA67955274EA87B00F3D6C3 /* Pods_Route_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C720FA73398D9C93EF1A98D /* Pods_Route_Tracker.framework */; };
+		9CD528B127771DED00D01135 /* MainRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CD528B027771DED00D01135 /* MainRouter.swift */; };
 		9CE8B9F22771DD3E00ACA7A3 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE8B9F12771DD3E00ACA7A3 /* RxBlocking */; };
 		9CE8B9F42771DD3E00ACA7A3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE8B9F32771DD3E00ACA7A3 /* RxCocoa */; };
 		9CE8B9F62771DD3E00ACA7A3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 9CE8B9F52771DD3E00ACA7A3 /* RxRelay */; };
@@ -87,6 +88,7 @@
 		9C542C28276243960033B8B6 /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		9C9BCCC82768A9D800AFB3FC /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		9CD528B027771DED00D01135 /* MainRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -199,6 +201,7 @@
 				9C542C1E276221B80033B8B6 /* LaunchRouter.swift */,
 				9C542C202762225F0033B8B6 /* LoginRouter.swift */,
 				9C542C2A276244EF0033B8B6 /* RegistrationRouter.swift */,
+				9CD528B027771DED00D01135 /* MainRouter.swift */,
 				9C542C22276222E90033B8B6 /* Launch.storyboard */,
 				9C542C1C2762215F0033B8B6 /* Launch.swift */,
 			);
@@ -452,6 +455,7 @@
 				9C542C1B27621E920033B8B6 /* BaseRouter.swift in Sources */,
 				9C542C212762225F0033B8B6 /* LoginRouter.swift in Sources */,
 				9C542C17276216850033B8B6 /* RecoveryPasswordViewController.swift in Sources */,
+				9CD528B127771DED00D01135 /* MainRouter.swift in Sources */,
 				9C542C29276243960033B8B6 /* RegistrationViewController.swift in Sources */,
 				9C39CBD4274E71D200815438 /* MapViewController.swift in Sources */,
 				9C39CBD0274E71D200815438 /* AppDelegate.swift in Sources */,
